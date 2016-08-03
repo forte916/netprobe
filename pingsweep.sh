@@ -14,7 +14,7 @@ done
 
 # ping sweep by nmap
 echo "--- 3 ping sweep"
-namp -sn -oG alived_ip.txt 192.168.1.1-255
+nmap -sn -oG alived_ip.txt 192.168.1.1-255
 
 
 echo "--- show IP and MAC ---"
