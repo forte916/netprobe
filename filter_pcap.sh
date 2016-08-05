@@ -35,12 +35,12 @@ echo "===== SSLv2/SSLv3 Support test ====="
 cat "$1"_accessed.txt | while read line
 do
   echo ">> Connecting with SSLv2 for " $line
-  openssl s_client -connect $line -ssl2
+  openssl s_client -connect $line -ssl2 < /dev/null
   echo ""
   sleep 1
 
   echo ">> Connecting with SSLv3 for " $line
-  openssl s_client -connect $line -ssl3
+  openssl s_client -connect $line -ssl3 < /dev/null
   echo ""
   sleep 1
 done
