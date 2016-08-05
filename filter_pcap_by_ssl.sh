@@ -1,5 +1,13 @@
 #!/bin/sh
 
+#
+# - Filter pcap by SSL protocols.
+#   + Show SSL/TLS version.
+#   + Show cipher suite names in `Client Hello`
+#   + Show accessed hosts
+#   + Check if server supports SSLv2 or SSLv3
+#
+
 if [ "$1" == "" ]; then
   echo "usage: $0 pcap_file_name"
   exit 1

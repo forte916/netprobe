@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# ping sweep cheat sheet
+#
+# ping sweep cheat sheet, listed 3ways.
+#
 
 echo "--- 1 ping sweep"
 for ip in {1..254}; do
