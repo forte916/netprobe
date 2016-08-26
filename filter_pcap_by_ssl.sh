@@ -11,6 +11,9 @@
 if [ "$1" == "" ]; then
   echo "usage: $0 pcap_file_name"
   exit 1
+elif [ ! -f "$1" ]; then
+  echo "$1 NOT found."
+  exit 1
 fi
 INPUT="$1"
 
