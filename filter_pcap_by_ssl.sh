@@ -17,6 +17,8 @@ elif [ ! -f "$1" ]; then
 fi
 INPUT="$1"
 
+
+echo ""
 echo "===== Does client use SSLv2/SSLv3 version? ====="
 echo "| ssl version | handshake type | handshake version | ciphersuite (decimal) | src ip | src port | dst ip | dst port | dst host |"
 
@@ -47,7 +49,6 @@ tshark -2 -V -n -r "$INPUT" -R "$FILTER" -T fields -e ip.dst -e tcp.dstport | so
 cat ${INPUT%.*}_ssl_accessed.txt
 
 
-
 echo ""
 echo "===== SSLv2/SSLv3 Support test ====="
 cat ${INPUT%.*}_ssl_accessed.txt | while read line
@@ -63,4 +64,5 @@ done
 
 rm -f ${INPUT%.*}_ssl_accessed.txt
 
+echo ""
 echo "===== Finished ====="

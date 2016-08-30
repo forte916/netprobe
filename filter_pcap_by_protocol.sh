@@ -43,7 +43,7 @@ FILTER="tcp && !http && !ssl"
 tshark -2 -V -n -r "$INPUT" -R "$FILTER" -T fields -e ip.src -e ip.dst -e frame.protocols | sort | uniq
 
 
-echo "" 
+echo ""
 echo "===== QUIC ====="
 echo "| src ip | dst ip | dst port | quic version | hostname |"
 FILTER="quic.tag"
@@ -64,6 +64,5 @@ FILTER="icmp"
 tshark -2 -V -n -r "$INPUT" -R "$FILTER" -T fields -e ip.src -e ip.dst -e frame.protocols | sort | uniq
 
 
-
+echo ""
 echo "===== Finished ====="
-
