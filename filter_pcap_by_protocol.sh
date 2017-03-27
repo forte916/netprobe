@@ -33,7 +33,7 @@ echo ""
 echo "===== ssl ====="
 echo "| src ip | dst ip | dst port | ssl version | hostname |"
 FILTER="ssl.handshake.type == 1"
-tshark -2 -V -n -r "$INPUT" -R "$FILTER" -T fields -e ip.src -e ip.dst -e tcp.dstport -e ssl.record.version -e ssl.handshake.extensions_server_name | sort | uniq
+tshark -2 -V -n -r "$INPUT" -R "$FILTER" -T fields -e ip.src -e ip.dst -e tcp.dstport -e ssl.handshake.version -e ssl.handshake.extensions_server_name | sort | uniq
 
 
 echo ""
@@ -66,3 +66,4 @@ tshark -2 -V -n -r "$INPUT" -R "$FILTER" -T fields -e ip.src -e ip.dst -e frame.
 
 echo ""
 echo "===== Finished ====="
+
